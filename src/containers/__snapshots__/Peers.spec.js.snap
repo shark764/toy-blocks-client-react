@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Peers /> should match snapshot 1`] = `
+<div>
+  <h1>
+    Peers
+  </h1>
+  <div
+    className="sc-htpNat cAglkR"
+  >
+    <div
+      className="sc-bxivhb gSSgMV"
+    >
+      <div
+        className="sc-EHOje fvoECt"
+      >
+        Node 1
+      </div>
+    </div>
+    <div
+      className="sc-ifAKCX fOGIFb"
+    >
+      <div
+        className="sc-bZQynM dSZNti"
+      >
+        http://localhost:3002
+      </div>
+      <div
+        className="sc-bdVaJa ffSlWY"
+        color="danger"
+      >
+        Offline
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-htpNat cAglkR"
+  >
+    <div
+      className="sc-bxivhb gSSgMV"
+    >
+      <div
+        className="sc-EHOje fvoECt"
+      >
+        Node 2
+      </div>
+    </div>
+    <div
+      className="sc-ifAKCX fOGIFb"
+    >
+      <div
+        className="sc-bZQynM dSZNti"
+      >
+        http://localhost:3003
+      </div>
+      <div
+        className="sc-bdVaJa ffSlWY"
+        color="danger"
+      >
+        Offline
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-htpNat cAglkR"
+  >
+    <div
+      className="sc-bxivhb gSSgMV"
+    >
+      <div
+        className="sc-EHOje fvoECt"
+      >
+        Node 3
+      </div>
+    </div>
+    <div
+      className="sc-ifAKCX fOGIFb"
+    >
+      <div
+        className="sc-bZQynM dSZNti"
+      >
+        http://localhost:3004
+      </div>
+      <div
+        className="sc-bdVaJa ffSlWY"
+        color="danger"
+      >
+        Offline
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-htpNat cAglkR"
+  >
+    <div
+      className="sc-bxivhb gSSgMV"
+    >
+      <div
+        className="sc-EHOje fvoECt"
+      >
+        Node 4
+      </div>
+    </div>
+    <div
+      className="sc-ifAKCX fOGIFb"
+    >
+      <div
+        className="sc-bZQynM dSZNti"
+      >
+        http://localhost:3005
+      </div>
+      <div
+        className="sc-bdVaJa ffSlWY"
+        color="danger"
+      >
+        Offline
+      </div>
+    </div>
+  </div>
+</div>
+`;

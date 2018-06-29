@@ -7,7 +7,6 @@
   },
   "scripts": {
     "preinstall": "node tools/nodeVersionCheck.js",
-    "remove-demo": "babel-node tools/removeDemo.js",
     "start-message": "babel-node tools/startMessage.js",
     "prestart": "npm run start-message",
     "start": "concurrently -k -r -s first \"npm run test:watch\" \"npm run open:src\" \"npm run lint:watch\"",
@@ -30,6 +29,7 @@
   "author": "Ben Carle",
   "license": "MIT",
   "dependencies": {
+    "cross-fetch": "2.2.1",
     "object-assign": "4.1.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",
