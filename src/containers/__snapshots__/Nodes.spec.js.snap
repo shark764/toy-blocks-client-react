@@ -16,6 +16,20 @@ exports[`<Nodes /> should match snapshot 1`] = `
       >
         Node 1
       </div>
+      <div
+        className="sc-gzVnrw hwzuqy"
+      >
+        <div
+          className="sc-bdVaJa ffSlWY"
+          color="danger"
+        >
+          Offline
+        </div>
+        <button
+          className="sc-htoDjs essTOS"
+          onClick={[Function]}
+        />
+      </div>
     </div>
     <div
       className="sc-ifAKCX fOGIFb"
@@ -24,12 +38,6 @@ exports[`<Nodes /> should match snapshot 1`] = `
         className="sc-bZQynM dSZNti"
       >
         https://thawing-springs-53971.herokuapp.com
-      </div>
-      <div
-        className="sc-bdVaJa ffSlWY"
-        color="danger"
-      >
-        Offline
       </div>
     </div>
   </div>
@@ -44,6 +52,20 @@ exports[`<Nodes /> should match snapshot 1`] = `
       >
         Node 2
       </div>
+      <div
+        className="sc-gzVnrw hwzuqy"
+      >
+        <div
+          className="sc-bdVaJa ffSlWY"
+          color="danger"
+        >
+          Offline
+        </div>
+        <button
+          className="sc-htoDjs essTOS"
+          onClick={[Function]}
+        />
+      </div>
     </div>
     <div
       className="sc-ifAKCX fOGIFb"
@@ -52,12 +74,6 @@ exports[`<Nodes /> should match snapshot 1`] = `
         className="sc-bZQynM dSZNti"
       >
         https://secret-lowlands-62331.herokuapp.com
-      </div>
-      <div
-        className="sc-bdVaJa ffSlWY"
-        color="danger"
-      >
-        Offline
       </div>
     </div>
   </div>

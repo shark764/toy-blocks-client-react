@@ -6,8 +6,22 @@ import * as actions from '../actions/nodes';
 import Node from '../components/Node';
 
 export class Nodes extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      expandedNodeURL: null
+    };
+    this.toggleNodeExpanded = this.toggleNodeExpanded.bind(this);
+  }
+
   componentDidMount() {
     this.props.actions.checkNodeStatuses(this.props.nodes.list)
+  }
+
+  toggleNodeExpanded(node) {
+    this.setState({
+      expandedNodeURL: node.url === this.state.expandedNodeURL ? null : node.url
+    });
   }
 
   render() {
@@ -15,7 +29,14 @@ export class Nodes extends React.Component {
     return (
       <div>
         <h1>Nodes</h1>
-        {nodes.list.map(node => <Node node={node} key={node.url} />)}
+        {nodes.list.map(node =>
+          <Node
+            node={node}
+            key={node.url}
+            expanded={node.url === this.state.expandedNodeURL}
+            toggleNodeExpanded={this.toggleNodeExpanded}
+          />
+        )}
       </div>
     );
   }
