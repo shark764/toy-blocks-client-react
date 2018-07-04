@@ -1,21 +1,21 @@
 import * as ActionTypes from '../constants/actionTypes';
-import * as ActionCreators from './peers';
+import * as ActionCreators from './nodes';
 
 describe('Actions', () => {
   beforeAll(() => {});
   afterAll(() => {});
 
-  const peer = {
+  const node = {
     url: 'http://localhost:3002',
     online: false,
     name: null
   };
 
-  // it('should create an action to start checking peer status', () => {
-  //   const actual = ActionCreators.checkPeerStatusStart(peer);
+  // it('should create an action to start checking node status', () => {
+  //   const actual = ActionCreators.checkNodeStatusStart(node);
   //   const expected = {
-  //     type: ActionTypes.CHECK_PEER_STATUS_START,
-  //     peer
+  //     type: ActionTypes.CHECK_NODE_STATUS_START,
+  //     node
   //   };
   //
   //   expect(actual).toEqual(expected);
@@ -24,14 +24,14 @@ describe('Actions', () => {
   it('should create an action to save fuel savings', () => {
     const dispatch = jest.fn();
     const expected = {
-      type: ActionTypes.CHECK_PEER_STATUS_START,
-      peer
+      type: ActionTypes.CHECK_NODE_STATUS_START,
+      node
     };
 
     // we expect this to return a function since it is a thunk
-    expect(typeof (ActionCreators.checkPeerStatus(peer))).toEqual('function');
+    expect(typeof (ActionCreators.checkNodeStatus(node))).toEqual('function');
     // then we simulate calling it with dispatch as the store would do
-    ActionCreators.checkPeerStatus(peer)(dispatch);
+    ActionCreators.checkNodeStatus(node)(dispatch);
     // finally assert that the dispatch was called with our expected action
     expect(dispatch).toBeCalledWith(expected);
   });

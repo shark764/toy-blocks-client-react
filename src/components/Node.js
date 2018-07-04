@@ -1,5 +1,5 @@
 import React from 'react';
-import {peer} from '../types';
+import {node} from '../types';
 import styled from 'styled-components';
 import colors from '../constants/colors';
 import Status from './Status';
@@ -36,24 +36,24 @@ const URL = styled.div`
   font-weight: 500;
 `;
 
-const Peer = ({peer}) => (
+const Node = ({node}) => (
   <Wrapper>
     <Head>
       <Name>
-        {peer.name || 'Unknown'}
+        {node.name || 'Unknown'}
       </Name>
     </Head>
     <Body>
       <URL>
-        {peer.url}
+        {node.url}
       </URL>
-      <Status {...peer} />
+      <Status {...node} />
     </Body>
   </Wrapper>
 );
 
-Peer.propTypes = {
-  peer: peer.isRequired
+Node.propTypes = {
+  node: node.isRequired
 };
 
-export default Peer;
+export default Node;

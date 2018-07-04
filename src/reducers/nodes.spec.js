@@ -1,20 +1,20 @@
 import * as ActionTypes from '../constants/actionTypes';
-import reducer from './peers';
+import reducer from './nodes';
 import initialState from './initialState';
 
 
-describe('Reducers::Peers', () => {
+describe('Reducers::Nodes', () => {
   const getInitialState = () => {
-    return initialState().peers;
+    return initialState().nodes;
   };
 
-  const peerA = {
+  const nodeA = {
     url: 'http://localhost:3002',
     online: false,
     name: null
   };
 
-  const peerB = {
+  const nodeB = {
     url: 'http://localhost:3003',
     online: false,
     name: null
@@ -27,66 +27,66 @@ describe('Reducers::Peers', () => {
     expect(reducer(undefined, action)).toEqual(expected);
   });
 
-  it('should handle CHECK_PEER_STATUS_START', () => {
+  it('should handle CHECK_NODE_STATUS_START', () => {
     const appState = {
-      list: [peerA, peerB]
+      list: [nodeA, nodeB]
     };
-    const action = { type: ActionTypes.CHECK_PEER_STATUS_START, peer: peerA };
+    const action = { type: ActionTypes.CHECK_NODE_STATUS_START, node: nodeA };
     const expected = {
       list: [
         {
-          ...peerA,
+          ...nodeA,
           loading: true
         },
-        peerB
+        nodeB
       ]
     };
 
     expect(reducer(appState, action)).toEqual(expected);
   });
 
-  it('should handle CHECK_PEER_STATUS_SUCCESS', () => {
+  it('should handle CHECK_NODE_STATUS_SUCCESS', () => {
     const appState = {
-      list: [peerA, peerB]
+      list: [nodeA, nodeB]
     };
-    const action = { type: ActionTypes.CHECK_PEER_STATUS_SUCCESS, peer: peerA, res: {node_name: 'alpha'} };
+    const action = { type: ActionTypes.CHECK_NODE_STATUS_SUCCESS, node: nodeA, res: {node_name: 'alpha'} };
     const expected = {
       list: [
         {
-          ...peerA,
+          ...nodeA,
           online: true,
           name: 'alpha',
           loading: false
         },
-        peerB
+        nodeB
       ]
     };
 
     expect(reducer(appState, action)).toEqual(expected);
   });
 
-  it('should handle CHECK_PEER_STATUS_FAILURE', () => {
+  it('should handle CHECK_NODE_STATUS_FAILURE', () => {
     const appState = {
       list: [
         {
-          ...peerA,
+          ...nodeA,
           online: true,
           name: 'alpha',
           loading: false
         },
-        peerB
+        nodeB
       ]
     };
-    const action = { type: ActionTypes.CHECK_PEER_STATUS_FAILURE, peer: peerA };
+    const action = { type: ActionTypes.CHECK_NODE_STATUS_FAILURE, node: nodeA };
     const expected = {
       list: [
         {
-          ...peerA,
+          ...nodeA,
           online: false,
           name: 'alpha',
           loading: false
         },
-        peerB
+        nodeB
       ]
     };
 

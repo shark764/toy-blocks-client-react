@@ -3,7 +3,7 @@ import * as ActionTypes from '../constants/actionTypes';
 import configureStore from './configureStore';
 
 describe('Store', () => {
-  const peers = {
+  const nodes = {
     list: [
       { url: 'a.com', online: false, name: null, loading: false },
       { url: 'b.com', online: false, name: null, loading: false },
@@ -16,17 +16,17 @@ describe('Store', () => {
   afterAll(() => {});
 
   it('should display results when necessary data is provided', () => {
-    const store = configureStore({peers});
+    const store = configureStore({nodes});
 
     const actions = [
-      { type: ActionTypes.CHECK_PEER_STATUS_SUCCESS, peer: peers.list[0], res: {node_name: 'alpha'} },
-      { type: ActionTypes.CHECK_PEER_STATUS_SUCCESS, peer: peers.list[1], res: {node_name: 'beta'} },
-      { type: ActionTypes.CHECK_PEER_STATUS_SUCCESS, peer: peers.list[0], res: {node_name: 'gamma'} },
-      { type: ActionTypes.CHECK_PEER_STATUS_SUCCESS, peer: peers.list[2], res: {node_name: 'delta'} },
-      { type: ActionTypes.CHECK_PEER_STATUS_SUCCESS, peer: peers.list[1], res: {node_name: 'epsilon'} },
-      { type: ActionTypes.CHECK_PEER_STATUS_SUCCESS, peer: peers.list[0], res: {node_name: 'zeta'} },
-      { type: ActionTypes.CHECK_PEER_STATUS_SUCCESS, peer: peers.list[0], res: {node_name: 'eta'} },
-      { type: ActionTypes.CHECK_PEER_STATUS_SUCCESS, peer: peers.list[0], res: {node_name: 'theta'} },
+      { type: ActionTypes.CHECK_NODE_STATUS_SUCCESS, node: nodes.list[0], res: {node_name: 'alpha'} },
+      { type: ActionTypes.CHECK_NODE_STATUS_SUCCESS, node: nodes.list[1], res: {node_name: 'beta'} },
+      { type: ActionTypes.CHECK_NODE_STATUS_SUCCESS, node: nodes.list[0], res: {node_name: 'gamma'} },
+      { type: ActionTypes.CHECK_NODE_STATUS_SUCCESS, node: nodes.list[2], res: {node_name: 'delta'} },
+      { type: ActionTypes.CHECK_NODE_STATUS_SUCCESS, node: nodes.list[1], res: {node_name: 'epsilon'} },
+      { type: ActionTypes.CHECK_NODE_STATUS_SUCCESS, node: nodes.list[0], res: {node_name: 'zeta'} },
+      { type: ActionTypes.CHECK_NODE_STATUS_SUCCESS, node: nodes.list[0], res: {node_name: 'eta'} },
+      { type: ActionTypes.CHECK_NODE_STATUS_SUCCESS, node: nodes.list[0], res: {node_name: 'theta'} },
     ];
     actions.forEach(action => store.dispatch(action));
 
@@ -40,6 +40,6 @@ describe('Store', () => {
       ]
     };
 
-    expect(actual.peers).toEqual(expected);
+    expect(actual.nodes).toEqual(expected);
   });
 });

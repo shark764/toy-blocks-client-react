@@ -2,33 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as actions from '../actions/peers';
-import Peer from '../components/Peer';
+import * as actions from '../actions/nodes';
+import Node from '../components/Node';
 
-export class Peers extends React.Component {
+export class Nodes extends React.Component {
   componentDidMount() {
-    this.props.actions.checkPeerStatuses(this.props.peers.list)
+    this.props.actions.checkNodeStatuses(this.props.nodes.list)
   }
 
   render() {
-    const {peers} = this.props;
+    const {nodes} = this.props;
     return (
       <div>
-        <h1>Peers</h1>
-        {peers.list.map(peer => <Peer peer={peer} key={peer.url} />)}
+        <h1>Nodes</h1>
+        {nodes.list.map(node => <Node node={node} key={node.url} />)}
       </div>
     );
   }
 }
 
-Peers.propTypes = {
+Nodes.propTypes = {
   actions: PropTypes.object.isRequired,
-  peers: PropTypes.object.isRequired
+  nodes: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    peers: state.peers
+    nodes: state.nodes
   };
 }
 
@@ -41,4 +41,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Peers);
+)(Nodes);

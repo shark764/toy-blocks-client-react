@@ -4,15 +4,15 @@ import configureMockStore from "redux-mock-store";
 import thunk from 'redux-thunk';
 import { Provider } from "react-redux";
 import { create } from "react-test-renderer";
-import ConnectedPeers, { Peers } from "./Peers";
-import Peer from "../components/Peer";
+import ConnectedNodes, { Nodes } from "./Nodes";
+import Node from "../components/Node";
 
-describe("<Peers />", () => {
+describe("<Nodes />", () => {
   const actions = {
-    checkPeerStatuses: jest.fn()
+    checkNodeStatuses: jest.fn()
   };
 
-  const peers = {
+  const nodes = {
     list: [
       {
         url: 'https://thawing-springs-53971.herokuapp.com',
@@ -29,23 +29,23 @@ describe("<Peers />", () => {
     ]
   };
 
-  it("should contain <Peer />", () => {
+  it("should contain <Node />", () => {
     const wrapper = shallow(
-      <Peers
+      <Nodes
         actions={actions}
-        peers={peers}
+        nodes={nodes}
       />
     );
 
-    expect(wrapper.find(Peer).length).toEqual(2);
+    expect(wrapper.find(Node).length).toEqual(2);
   });
 
   it("should match snapshot", () => {
     const middlewares = [thunk];
-    const store = configureMockStore(middlewares)({peers});
+    const store = configureMockStore(middlewares)({nodes});
     const component = create(
       <Provider store={store}>
-        <ConnectedPeers />
+        <ConnectedNodes />
       </Provider>
     );
     const tree = component.toJSON();

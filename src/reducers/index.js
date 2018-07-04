@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import peers from './peers';
+import nodes from './nodes';
 import { routerReducer } from 'react-router-redux';
 
 const rootReducer = combineReducers({
-  peers,
+  nodes,
   routing: routerReducer
 });
 

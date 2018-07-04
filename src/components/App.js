@@ -1,7 +1,7 @@
 /* eslint-disable import/no-named-as-default */
 import { Route, Switch } from "react-router-dom";
 
-import Peers from "../containers/Peers";
+import Nodes from "../containers/Nodes";
 import NotFoundPage from "./NotFoundPage";
 import PropTypes from "prop-types";
 import React from "react";
@@ -17,12 +17,12 @@ class App extends React.Component {
     return (
       <div>
         {/*<div>*/}
-          {/*<NavLink exact to="/" activeStyle={activeStyle}>Peers</NavLink>*/}
+          {/*<NavLink exact to="/" activeStyle={activeStyle}>Nodes</NavLink>*/}
           {/*{' | '}*/}
           {/*<NavLink to="/about" activeStyle={activeStyle}>About</NavLink>*/}
         {/*</div>*/}
         <Switch>
-          <Route exact path="/" component={Peers} />
+          <Route exact path="/" component={Nodes} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>

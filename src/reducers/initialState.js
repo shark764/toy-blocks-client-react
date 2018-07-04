@@ -1,5 +1,5 @@
 export default () => ({
-  peers: {
+  nodes: {
     list: [
       {
         url: 'https://thawing-springs-53971.herokuapp.com',
