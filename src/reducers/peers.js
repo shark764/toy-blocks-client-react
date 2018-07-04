@@ -1,7 +1,7 @@
 import {CHECK_PEER_STATUS_START, CHECK_PEER_STATUS_SUCCESS, CHECK_PEER_STATUS_FAILURE} from '../constants/actionTypes';
 import initialState from './initialState';
 
-export default function peersReducer(state = initialState.peers, action) {
+export default function peersReducer(state = initialState().peers, action) {
   let list, peerIndex;
   switch (action.type) {
     case CHECK_PEER_STATUS_START:

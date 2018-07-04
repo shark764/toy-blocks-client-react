@@ -7,7 +7,6 @@ import Peer from '../components/Peer';
 
 export class Peers extends React.Component {
   componentDidMount() {
-    // this.props.actions.checkPeerStatus(this.props.peers.list[0])
     this.props.actions.checkPeerStatuses(this.props.peers.list)
   }
 

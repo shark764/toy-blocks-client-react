@@ -6,63 +6,43 @@ import { Provider } from "react-redux";
 import { create } from "react-test-renderer";
 import ConnectedPeers, { Peers } from "./Peers";
 import Peer from "../components/Peer";
-import initialState from "../reducers/initialState";
 
 describe("<Peers />", () => {
   const actions = {
     checkPeerStatuses: jest.fn()
   };
 
+  const peers = {
+    list: [
+      {
+        url: 'https://thawing-springs-53971.herokuapp.com',
+        online: false,
+        name: 'Node 1',
+        loading: false
+      },
+      {
+        url: 'https://secret-lowlands-62331.herokuapp.com',
+        online: false,
+        name: 'Node 2',
+        loading: false
+      }
+    ]
+  };
+
   it("should contain <Peer />", () => {
     const wrapper = shallow(
       <Peers
         actions={actions}
-        peers={initialState.peers}
+        peers={peers}
       />
     );
 
-    expect(wrapper.find(Peer).length).toEqual(4);
+    expect(wrapper.find(Peer).length).toEqual(2);
   });
-
-  // it("calls saveFuelSavings upon clicking save", () => {
-  //   const wrapper = mount(
-  //     <FuelSavingsPage
-  //       actions={actions}
-  //       fuelSavings={initialState.fuelSavings}
-  //     />
-  //   );
-  //
-  //   const save = wrapper.find('input[type="submit"]');
-  //   save.simulate("click");
-  //
-  //   expect(actions.saveFuelSavings).toHaveBeenCalledWith(
-  //     initialState.fuelSavings
-  //   );
-  // });
-  //
-  // it("calls calculateFuelSavings upon changing a field", () => {
-  //   const wrapper = mount(
-  //     <FuelSavingsPage
-  //       actions={actions}
-  //       fuelSavings={initialState.fuelSavings}
-  //     />
-  //   );
-  //   const name = "newMpg";
-  //   const value = 10;
-  //
-  //   const input = wrapper.find('input[name="newMpg"]');
-  //   input.simulate("change", { target: { name, value } });
-  //
-  //   expect(actions.calculateFuelSavings).toHaveBeenCalledWith(
-  //     initialState.fuelSavings,
-  //     name,
-  //     value
-  //   );
-  // });
 
   it("should match snapshot", () => {
     const middlewares = [thunk];
-    const store = configureMockStore(middlewares)(initialState);
+    const store = configureMockStore(middlewares)({peers});
     const component = create(
       <Provider store={store}>
         <ConnectedPeers />

@@ -51,63 +51,7 @@ exports[`<Peers /> should match snapshot 1`] = `
       <div
         className="sc-bZQynM dSZNti"
       >
-        http://localhost:3002
-      </div>
-      <div
-        className="sc-bdVaJa ffSlWY"
-        color="danger"
-      >
-        Offline
-      </div>
-    </div>
-  </div>
-  <div
-    className="sc-htpNat cAglkR"
-  >
-    <div
-      className="sc-bxivhb gSSgMV"
-    >
-      <div
-        className="sc-EHOje fvoECt"
-      >
-        Node 3
-      </div>
-    </div>
-    <div
-      className="sc-ifAKCX fOGIFb"
-    >
-      <div
-        className="sc-bZQynM dSZNti"
-      >
-        http://localhost:3003
-      </div>
-      <div
-        className="sc-bdVaJa ffSlWY"
-        color="danger"
-      >
-        Offline
-      </div>
-    </div>
-  </div>
-  <div
-    className="sc-htpNat cAglkR"
-  >
-    <div
-      className="sc-bxivhb gSSgMV"
-    >
-      <div
-        className="sc-EHOje fvoECt"
-      >
-        Node 4
-      </div>
-    </div>
-    <div
-      className="sc-ifAKCX fOGIFb"
-    >
-      <div
-        className="sc-bZQynM dSZNti"
-      >
-        http://localhost:3004
+        https://secret-lowlands-62331.herokuapp.com
       </div>
       <div
         className="sc-bdVaJa ffSlWY"
