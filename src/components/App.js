@@ -1,5 +1,5 @@
 /* eslint-disable import/no-named-as-default */
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Nodes from "../containers/Nodes";
 import NotFoundPage from "./NotFoundPage";
@@ -13,19 +13,13 @@ import { hot } from "react-hot-loader";
 
 class App extends React.Component {
   render() {
-    // const activeStyle = { color: 'blue' };
     return (
-      <div>
-        {/*<div>*/}
-          {/*<NavLink exact to="/" activeStyle={activeStyle}>Nodes</NavLink>*/}
-          {/*{' | '}*/}
-          {/*<NavLink to="/about" activeStyle={activeStyle}>About</NavLink>*/}
-        {/*</div>*/}
+      <Router>
         <Switch>
           <Route exact path="/" component={Nodes} />
           <Route component={NotFoundPage} />
         </Switch>
-      </div>
+      </Router>
     );
   }
 }
