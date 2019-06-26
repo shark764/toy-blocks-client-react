@@ -94,7 +94,7 @@ export default {
         ]
       },
       {
-        test: /(\.css|\.scss|\.sass)$/,
+        test: /(\.css)$/,
         use: [
           'style-loader',
           {
@@ -108,12 +108,6 @@ export default {
               plugins: () => [
                 require('autoprefixer')
               ],
-              sourceMap: true
-            }
-          }, {
-            loader: 'sass-loader',
-            options: {
-              includePaths: [path.resolve(__dirname, 'src', 'scss')],
               sourceMap: true
             }
           }
