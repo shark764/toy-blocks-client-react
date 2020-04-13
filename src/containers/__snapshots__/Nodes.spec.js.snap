@@ -7,17 +7,23 @@ exports[`<Nodes /> should match snapshot 1`] = `
   <h1
     className="MuiTypography-root MuiTypography-h4"
   >
-    <strong>
+    <strong
+      style={
+        Object {
+          "color": "#000",
+        }
+      }
+    >
       Nodes
     </strong>
   </h1>
   <div
-    className="MuiPaper-root MuiExpansionPanel-root makeStyles-root-33 MuiExpansionPanel-rounded MuiPaper-elevation1 MuiPaper-rounded"
+    className="MuiPaper-root MuiExpansionPanel-root makeStyles-root-33 MuiExpansionPanel-rounded MuiPaper-elevation3 MuiPaper-rounded"
   >
     <div
       aria-disabled={false}
       aria-expanded={false}
-      className="MuiButtonBase-root MuiExpansionPanelSummary-root"
+      className="MuiButtonBase-root MuiExpansionPanelSummary-root makeStyles-summary-34"
       onBlur={[Function]}
       onClick={[Function]}
       onDragLeave={[Function]}
@@ -34,27 +40,43 @@ exports[`<Nodes /> should match snapshot 1`] = `
       tabIndex={0}
     >
       <div
-        className="MuiExpansionPanelSummary-content"
+        className="MuiExpansionPanelSummary-content makeStyles-content-37"
       >
         <div
-          className="MuiBox-root MuiBox-root-77"
+          className="MuiBox-root MuiBox-root-82 makeStyles-summaryContent-35"
         >
-          <p
-            className="MuiTypography-root makeStyles-heading-34 MuiTypography-body1"
+          <div
+            className="MuiBox-root MuiBox-root-83"
           >
-            Node 1
-          </p>
-          <p
-            className="MuiTypography-root makeStyles-secondaryHeading-35 MuiTypography-body1"
+            <h5
+              className="MuiTypography-root makeStyles-heading-39 MuiTypography-h5"
+            >
+              Node 1
+            </h5>
+            <h6
+              className="MuiTypography-root makeStyles-secondaryHeading-40 MuiTypography-subtitle1"
+            >
+              https://thawing-springs-53971.herokuapp.com
+            </h6>
+          </div>
+          <div
+            className="MuiBox-root MuiBox-root-88"
           >
-            https://thawing-springs-53971.herokuapp.com
-          </p>
+            <span
+              className="makeStyles-dot-84 makeStyles-dot-86"
+            />
+            <span
+              className="makeStyles-text-85 makeStyles-text-87"
+            >
+              OFFLINE
+            </span>
+          </div>
         </div>
       </div>
       <div
         aria-disabled={false}
         aria-hidden={true}
-        className="MuiButtonBase-root MuiIconButton-root MuiExpansionPanelSummary-expandIcon MuiIconButton-edgeEnd"
+        className="MuiButtonBase-root MuiIconButton-root MuiExpansionPanelSummary-expandIcon makeStyles-icon-36 MuiIconButton-edgeEnd"
         onBlur={[Function]}
         onClick={undefined}
         onDragLeave={[Function]}
@@ -122,12 +144,12 @@ exports[`<Nodes /> should match snapshot 1`] = `
     </div>
   </div>
   <div
-    className="MuiPaper-root MuiExpansionPanel-root makeStyles-root-33 MuiExpansionPanel-rounded MuiPaper-elevation1 MuiPaper-rounded"
+    className="MuiPaper-root MuiExpansionPanel-root makeStyles-root-33 MuiExpansionPanel-rounded MuiPaper-elevation3 MuiPaper-rounded"
   >
     <div
       aria-disabled={false}
       aria-expanded={false}
-      className="MuiButtonBase-root MuiExpansionPanelSummary-root"
+      className="MuiButtonBase-root MuiExpansionPanelSummary-root makeStyles-summary-34"
       onBlur={[Function]}
       onClick={[Function]}
       onDragLeave={[Function]}
@@ -144,27 +166,43 @@ exports[`<Nodes /> should match snapshot 1`] = `
       tabIndex={0}
     >
       <div
-        className="MuiExpansionPanelSummary-content"
+        className="MuiExpansionPanelSummary-content makeStyles-content-37"
       >
         <div
-          className="MuiBox-root MuiBox-root-102"
+          className="MuiBox-root MuiBox-root-113 makeStyles-summaryContent-35"
         >
-          <p
-            className="MuiTypography-root makeStyles-heading-34 MuiTypography-body1"
+          <div
+            className="MuiBox-root MuiBox-root-114"
           >
-            Node 2
-          </p>
-          <p
-            className="MuiTypography-root makeStyles-secondaryHeading-35 MuiTypography-body1"
+            <h5
+              className="MuiTypography-root makeStyles-heading-39 MuiTypography-h5"
+            >
+              Node 2
+            </h5>
+            <h6
+              className="MuiTypography-root makeStyles-secondaryHeading-40 MuiTypography-subtitle1"
+            >
+              https://secret-lowlands-62331.herokuapp.com
+            </h6>
+          </div>
+          <div
+            className="MuiBox-root MuiBox-root-117"
           >
-            https://secret-lowlands-62331.herokuapp.com
-          </p>
+            <span
+              className="makeStyles-dot-84 makeStyles-dot-115"
+            />
+            <span
+              className="makeStyles-text-85 makeStyles-text-116"
+            >
+              OFFLINE
+            </span>
+          </div>
         </div>
       </div>
       <div
         aria-disabled={false}
         aria-hidden={true}
-        className="MuiButtonBase-root MuiIconButton-root MuiExpansionPanelSummary-expandIcon MuiIconButton-edgeEnd"
+        className="MuiButtonBase-root MuiIconButton-root MuiExpansionPanelSummary-expandIcon makeStyles-icon-36 MuiIconButton-edgeEnd"
         onBlur={[Function]}
         onClick={undefined}
         onDragLeave={[Function]}
