@@ -1,108 +1,112 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import colors from '../constants/colors';
-import Status from './Status';
+import React from "react";
+import PropTypes from "prop-types";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import {
+  ExpansionPanel,
+  ExpansionPanelSummary,
+  Typography,
+  ExpansionPanelDetails,
+  makeStyles,
+  Box,
+} from "@material-ui/core";
+import colors from "../constants/colors";
+import Status from "./Status";
 
-const Wrapper = styled.div`
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid ${colors.border};
-  background: ${colors.contentBackground};
-  border-radius: 5px;
-`;
+const Node = ({ node, expanded, toggleNodeExpanded }) => {
+  const classes = useStyles();
+  return (
+    <ExpansionPanel
+      elevation={3}
+      className={classes.root}
+      expanded={expanded}
+      onChange={() => toggleNodeExpanded(node)}
+    >
+      <ExpansionPanelSummary
+        className={classes.summary}
+        classes={{
+          expandIcon: classes.icon,
+          content: classes.content,
+          expanded: classes.expanded,
+        }}
+        expandIcon={<ExpandMoreIcon />}
+      >
+        <Box className={classes.summaryContent}>
+          <Box>
+            <Typography variant="h5" className={classes.heading}>
+              {node.name || "Unknown"}
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              className={classes.secondaryHeading}
+            >
+              {node.url}
+            </Typography>
+          </Box>
+          <Status loading={node.loading} online={node.online} />
+        </Box>
+      </ExpansionPanelSummary>
+      <ExpansionPanelDetails>
+        <Typography>Blocks go here</Typography>
+      </ExpansionPanelDetails>
+    </ExpansionPanel>
+  );
+};
 
-const Head = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const Body = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const Name = styled.div`
-  margin-bottom: 6px;
-  color: ${colors.primary};
-  font-size: 16px;
-  font-weight: 700;
-`;
-
-const URL = styled.div`
-  margin-top: 2px;
-  margin-bottom: 2px;
-  color: ${colors.faded};
-  font-weight: 500;
-`;
-
-const Toolbar = styled.div`
-  display: flex;
-  justify-content: right;
-`;
-
-const Expander = styled.button`
-  margin-left: 10px;
-  margin-top: 7px;
- 
-  background: none;
-  border: none;
-  position: relative;
-  
-  cursor: pointer;
-  outline: none;
-  
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-${props => props.expanded ? 'top' : 'bottom'}: 7px solid ${colors.text};
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-  }
-`;
-
-const BlocksWrapper = styled.div`
-  margin: 20px 0;
-  text-align: center;
-  color: ${colors.danger};
-  font-weight: 700;
-`;
-
-const Node = ({node, expanded, toggleNodeExpanded}) => (
-  <Wrapper>
-    <Head>
-      <Name>
-        {node.name || 'Unknown'}
-      </Name>
-      <Toolbar>
-        <Status {...node} />
-        <Expander expanded={expanded} onClick={() => toggleNodeExpanded(node)}/>
-      </Toolbar>
-    </Head>
-    <Body>
-      <URL>
-        {node.url}
-      </URL>
-    </Body>
-    {expanded && (
-      <BlocksWrapper>
-        Blocks go here
-      </BlocksWrapper>
-    )}
-  </Wrapper>
-);
+const useStyles = makeStyles((theme) => ({
+  root: {
+    margin: "16px 0",
+    boxShadow: "0px 3px 6px 1px rgba(0,0,0,0.15)",
+    "&:before": {
+      backgroundColor: "unset",
+    },
+  },
+  summary: {
+    padding: "0 24px",
+  },
+  summaryContent: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    paddingRight: 20,
+  },
+  icon: {
+    color: colors.faded,
+  },
+  content: {
+    margin: "10px 0 !important", // Avoid change of sizing on expanded
+  },
+  expanded: {
+    "& $icon": {
+      paddingLeft: 0,
+      paddingRight: 12,
+      top: -10,
+      marginRight: 0,
+    },
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(17),
+    display: "block",
+    color: colors.text,
+    lineHeight: 1.5,
+  },
+  secondaryHeading: {
+    fontSize: theme.typography.pxToRem(14),
+    color: colors.faded,
+    lineHeight: 2,
+  },
+}));
 
 Node.propTypes = {
   node: PropTypes.shape({
     url: PropTypes.string,
     online: PropTypes.bool,
     name: PropTypes.string,
-    loading: PropTypes.bool
+    loading: PropTypes.bool,
   }).isRequired,
   expanded: PropTypes.bool,
-  toggleNodeExpanded: PropTypes.func.isRequired
+  toggleNodeExpanded: PropTypes.func.isRequired,
 };
 
 export default Node;
