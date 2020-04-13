@@ -29,9 +29,9 @@ export class Nodes extends React.Component {
   render() {
     const { nodes } = this.props;
     return (
-      <Box paddingTop={2}>
+      <Box paddingTop={7}>
         <Typography variant="h4" component="h1">
-          <strong>Nodes</strong>
+          <strong style={{ color: "#000" }}>Nodes</strong>
         </Typography>
         {nodes.list.map((node) => (
           <Node
