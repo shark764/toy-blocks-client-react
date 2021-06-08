@@ -1,40 +1,66 @@
-import * as ActionTypes from '../constants/actionTypes';
-import * as ActionCreators from './nodes';
+import * as ActionTypes from "../constants/actionTypes";
+import * as ActionCreators from "./nodes";
+import mockFetch from "cross-fetch";
 
-describe('Actions', () => {
-  beforeAll(() => {});
-  afterAll(() => {});
+jest.mock("cross-fetch");
 
-  const node = {
-    url: 'http://localhost:3002',
-    online: false,
-    name: null
-  };
+describe("Actions", () => {
+  const dispatch = jest.fn();
 
-  // it('should create an action to start checking node status', () => {
-  //   const actual = ActionCreators.checkNodeStatusStart(node);
-  //   const expected = {
-  //     type: ActionTypes.CHECK_NODE_STATUS_START,
-  //     node
-  //   };
-  //
-  //   expect(actual).toEqual(expected);
-  // });
-
-  it('should create an action to save fuel savings', () => {
-    const dispatch = jest.fn();
-    const expected = {
-      type: ActionTypes.CHECK_NODE_STATUS_START,
-      node
-    };
-
-    // we expect this to return a function since it is a thunk
-    expect(typeof (ActionCreators.checkNodeStatus(node))).toEqual('function');
-    // then we simulate calling it with dispatch as the store would do
-    ActionCreators.checkNodeStatus(node)(dispatch);
-    // finally assert that the dispatch was called with our expected action
-    expect(dispatch).toBeCalledWith(expected);
+  afterAll(() => {
+    dispatch.mockClear();
+    mockFetch.mockClear();
   });
 
+  const node = {
+    url: "http://localhost:3002",
+    online: false,
+    name: null,
+  };
 
+  it("should fetch the node status", async () => {
+    mockFetch.mockReturnValueOnce(
+      Promise.resolve({
+        status: 200,
+        json() {
+          return Promise.resolve({ node_name: "Secret Lowlands" });
+        },
+      })
+    );
+    await ActionCreators.checkNodeStatus(node)(dispatch);
+    const expected = [
+      {
+        type: ActionTypes.CHECK_NODE_STATUS_START,
+        node,
+      },
+      {
+        type: ActionTypes.CHECK_NODE_STATUS_SUCCESS,
+        node,
+        res: { node_name: "Secret Lowlands" },
+      },
+    ];
+
+    expect(dispatch.mock.calls.flat()).toEqual(expected);
+  });
+
+  it("should fail to fetch the node status", async () => {
+    mockFetch.mockReturnValueOnce(
+      Promise.resolve({
+        status: 400,
+      })
+    );
+    await ActionCreators.checkNodeStatus(node)(dispatch);
+    const expected = [
+      {
+        type: ActionTypes.CHECK_NODE_STATUS_START,
+        node,
+      },
+      {
+        type: ActionTypes.CHECK_NODE_STATUS_FAILURE,
+        node,
+      },
+    ];
+
+    expect(dispatch.mock.calls.flat()).toEqual(expected);
+  });
 });

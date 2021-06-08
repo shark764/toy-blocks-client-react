@@ -2,7 +2,7 @@
 
 exports[`<Nodes /> should match snapshot 1`] = `
 <div
-  className="MuiBox-root MuiBox-root-2"
+  className="MuiBox-root MuiBox-root-1"
 >
   <h1
     className="MuiTypography-root MuiTypography-h4"
@@ -18,12 +18,12 @@ exports[`<Nodes /> should match snapshot 1`] = `
     </strong>
   </h1>
   <div
-    className="MuiPaper-root MuiExpansionPanel-root makeStyles-root-33 MuiExpansionPanel-rounded MuiPaper-elevation3 MuiPaper-rounded"
+    className="MuiPaper-root MuiAccordion-root makeStyles-root-2 MuiAccordion-rounded MuiPaper-elevation3 MuiPaper-rounded"
   >
     <div
       aria-disabled={false}
       aria-expanded={false}
-      className="MuiButtonBase-root MuiExpansionPanelSummary-root makeStyles-summary-34"
+      className="MuiButtonBase-root MuiAccordionSummary-root makeStyles-summary-3"
       onBlur={[Function]}
       onClick={[Function]}
       onDragLeave={[Function]}
@@ -40,33 +40,33 @@ exports[`<Nodes /> should match snapshot 1`] = `
       tabIndex={0}
     >
       <div
-        className="MuiExpansionPanelSummary-content makeStyles-content-37"
+        className="MuiAccordionSummary-content makeStyles-content-6"
       >
         <div
-          className="MuiBox-root MuiBox-root-82 makeStyles-summaryContent-35"
+          className="MuiBox-root MuiBox-root-10 makeStyles-summaryContent-4"
         >
           <div
-            className="MuiBox-root MuiBox-root-83"
+            className="MuiBox-root MuiBox-root-11"
           >
             <h5
-              className="MuiTypography-root makeStyles-heading-39 MuiTypography-h5"
+              className="MuiTypography-root makeStyles-heading-8 MuiTypography-h5"
             >
               Node 1
             </h5>
             <h6
-              className="MuiTypography-root makeStyles-secondaryHeading-40 MuiTypography-subtitle1"
+              className="MuiTypography-root makeStyles-secondaryHeading-9 MuiTypography-subtitle1"
             >
               https://thawing-springs-53971.herokuapp.com
             </h6>
           </div>
           <div
-            className="MuiBox-root MuiBox-root-88"
+            className="MuiBox-root MuiBox-root-16"
           >
             <span
-              className="makeStyles-dot-84 makeStyles-dot-86"
+              className="makeStyles-dot-12 makeStyles-dot-14"
             />
             <span
-              className="makeStyles-text-85 makeStyles-text-87"
+              className="makeStyles-text-13 makeStyles-text-15"
             >
               OFFLINE
             </span>
@@ -76,9 +76,8 @@ exports[`<Nodes /> should match snapshot 1`] = `
       <div
         aria-disabled={false}
         aria-hidden={true}
-        className="MuiButtonBase-root MuiIconButton-root MuiExpansionPanelSummary-expandIcon makeStyles-icon-36 MuiIconButton-edgeEnd"
+        className="MuiButtonBase-root MuiIconButton-root MuiAccordionSummary-expandIcon makeStyles-icon-5 MuiIconButton-edgeEnd"
         onBlur={[Function]}
-        onClick={undefined}
         onDragLeave={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -96,11 +95,9 @@ exports[`<Nodes /> should match snapshot 1`] = `
           className="MuiIconButton-label"
         >
           <svg
-            aria-hidden="true"
+            aria-hidden={true}
             className="MuiSvgIcon-root"
-            color={undefined}
             focusable="false"
-            role={undefined}
             viewBox="0 0 24 24"
           >
             <path
@@ -125,12 +122,10 @@ exports[`<Nodes /> should match snapshot 1`] = `
           className="MuiCollapse-wrapperInner"
         >
           <div
-            aria-labelledby={undefined}
-            id={undefined}
             role="region"
           >
             <div
-              className="MuiExpansionPanelDetails-root"
+              className="MuiAccordionDetails-root"
             >
               <p
                 className="MuiTypography-root MuiTypography-body1"
@@ -144,12 +139,12 @@ exports[`<Nodes /> should match snapshot 1`] = `
     </div>
   </div>
   <div
-    className="MuiPaper-root MuiExpansionPanel-root makeStyles-root-33 MuiExpansionPanel-rounded MuiPaper-elevation3 MuiPaper-rounded"
+    className="MuiPaper-root MuiAccordion-root makeStyles-root-2 MuiAccordion-rounded MuiPaper-elevation3 MuiPaper-rounded"
   >
     <div
       aria-disabled={false}
       aria-expanded={false}
-      className="MuiButtonBase-root MuiExpansionPanelSummary-root makeStyles-summary-34"
+      className="MuiButtonBase-root MuiAccordionSummary-root makeStyles-summary-3"
       onBlur={[Function]}
       onClick={[Function]}
       onDragLeave={[Function]}
@@ -166,33 +161,33 @@ exports[`<Nodes /> should match snapshot 1`] = `
       tabIndex={0}
     >
       <div
-        className="MuiExpansionPanelSummary-content makeStyles-content-37"
+        className="MuiAccordionSummary-content makeStyles-content-6"
       >
         <div
-          className="MuiBox-root MuiBox-root-113 makeStyles-summaryContent-35"
+          className="MuiBox-root MuiBox-root-17 makeStyles-summaryContent-4"
         >
           <div
-            className="MuiBox-root MuiBox-root-114"
+            className="MuiBox-root MuiBox-root-18"
           >
             <h5
-              className="MuiTypography-root makeStyles-heading-39 MuiTypography-h5"
+              className="MuiTypography-root makeStyles-heading-8 MuiTypography-h5"
             >
               Node 2
             </h5>
             <h6
-              className="MuiTypography-root makeStyles-secondaryHeading-40 MuiTypography-subtitle1"
+              className="MuiTypography-root makeStyles-secondaryHeading-9 MuiTypography-subtitle1"
             >
               https://secret-lowlands-62331.herokuapp.com
             </h6>
           </div>
           <div
-            className="MuiBox-root MuiBox-root-117"
+            className="MuiBox-root MuiBox-root-21"
           >
             <span
-              className="makeStyles-dot-84 makeStyles-dot-115"
+              className="makeStyles-dot-12 makeStyles-dot-19"
             />
             <span
-              className="makeStyles-text-85 makeStyles-text-116"
+              className="makeStyles-text-13 makeStyles-text-20"
             >
               OFFLINE
             </span>
@@ -202,9 +197,8 @@ exports[`<Nodes /> should match snapshot 1`] = `
       <div
         aria-disabled={false}
         aria-hidden={true}
-        className="MuiButtonBase-root MuiIconButton-root MuiExpansionPanelSummary-expandIcon makeStyles-icon-36 MuiIconButton-edgeEnd"
+        className="MuiButtonBase-root MuiIconButton-root MuiAccordionSummary-expandIcon makeStyles-icon-5 MuiIconButton-edgeEnd"
         onBlur={[Function]}
-        onClick={undefined}
         onDragLeave={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -222,11 +216,9 @@ exports[`<Nodes /> should match snapshot 1`] = `
           className="MuiIconButton-label"
         >
           <svg
-            aria-hidden="true"
+            aria-hidden={true}
             className="MuiSvgIcon-root"
-            color={undefined}
             focusable="false"
-            role={undefined}
             viewBox="0 0 24 24"
           >
             <path
@@ -251,12 +243,10 @@ exports[`<Nodes /> should match snapshot 1`] = `
           className="MuiCollapse-wrapperInner"
         >
           <div
-            aria-labelledby={undefined}
-            id={undefined}
             role="region"
           >
             <div
-              className="MuiExpansionPanelDetails-root"
+              className="MuiAccordionDetails-root"
             >
               <p
                 className="MuiTypography-root MuiTypography-body1"
