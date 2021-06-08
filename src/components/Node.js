@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import {
-  ExpansionPanel,
-  ExpansionPanelSummary,
+  Accordion,
+  AccordionSummary,
   Typography,
-  ExpansionPanelDetails,
+  AccordionDetails,
   makeStyles,
   Box,
 } from "@material-ui/core";
@@ -15,13 +15,13 @@ import Status from "./Status";
 const Node = ({ node, expanded, toggleNodeExpanded }) => {
   const classes = useStyles();
   return (
-    <ExpansionPanel
+    <Accordion
       elevation={3}
       className={classes.root}
       expanded={expanded}
       onChange={() => toggleNodeExpanded(node)}
     >
-      <ExpansionPanelSummary
+      <AccordionSummary
         className={classes.summary}
         classes={{
           expandIcon: classes.icon,
@@ -44,11 +44,11 @@ const Node = ({ node, expanded, toggleNodeExpanded }) => {
           </Box>
           <Status loading={node.loading} online={node.online} />
         </Box>
-      </ExpansionPanelSummary>
-      <ExpansionPanelDetails>
+      </AccordionSummary>
+      <AccordionDetails>
         <Typography>Blocks go here</Typography>
-      </ExpansionPanelDetails>
-    </ExpansionPanel>
+      </AccordionDetails>
+    </Accordion>
   );
 };
 
