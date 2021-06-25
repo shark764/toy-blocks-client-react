@@ -33,7 +33,7 @@ Currently the application is getting the status for each node and updating the s
 3. Tests pass and coverage has been added to cover the changes
 4. Implementation matches the design
 
-Tests are a mandatory part of the challenge! At the end of the challenge please go through and explain everything you have done and show your UI work.
+___
 
 - You have 75 minutes to complete the challenge from the time you begin.
 - Tests are a mandatory part of the challenge, so please include them. Please add full test coverage to account for the features of the challenge, and make sure the full test suite passes.
