@@ -9,6 +9,14 @@
 5. `npm start`
 6. `npm test`
 
+## Introduction
+
+Here are the instructions for the React Coding Challenge. Please note that you have 5 days from the time of this email to complete and submit the challenge. Please ensure that you capture a screen recording with audio as you complete the challenge using programs such as Loom or other screen recording software. The recording should be at least full length of the challenge (1 hour and 15 mins). The recording must be on a streaming site - we cannot download large files. The video must include audio of you explaining what you are doing. We will review the recording to grade the challenge.
+
+Here are the links you will need for the challenge:
+[Figma Link](https://www.figma.com/proto/CCuZ0sjGQ2CQtKvuENHaF8/React-Hiring-Test?node-id=11%3A26922&scaling=min-zoom)
+(You can use "Open in editor" to see the CSS values)
+
 ## Instructions
 
 The current application is displaying a list of nodes. Don’t worry about naming convention here, the names don’t matter. Each node represents a server. Each server implements the same API but returns different data. The important endpoints you will need to know for each server are:
@@ -26,3 +34,8 @@ Currently the application is getting the status for each node and updating the s
 4. Implementation matches the design
 
 Tests are a mandatory part of the challenge! At the end of the challenge please go through and explain everything you have done and show your UI work.
+
+At the end of the challenge please go through and explain everything you have done and show your UI work.
+You have 75 minutes to complete the challenge from the time you begin.
+Once you have completed the challenge, please submit the file/link to my email address. If you are having difficulties with the challenge, please email me for assistance.
+Again, please submit the recording within 5 days of receiving the email with the challenge.
