@@ -19,7 +19,7 @@ Here are the links you will need for the challenge:
 
 ## Instructions
 
-The current application is displaying a list of nodes. Don’t worry about naming convention here, the names don’t matter. Each node represents a server. Each server implements the same API but returns different data. The important endpoints you will need to know for each server are:
+The current application is displaying a list of nodes. Don’t worry about what Nodes or Blocks are, just know that a Node has many Blocks. Each node represents a server. Each server implements the same API but returns different data. The important endpoints you will need to know for each server are:
 /api/v1/status
 /api/v1/blocks
 
