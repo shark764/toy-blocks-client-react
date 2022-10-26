@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import initialState from "./initialState";
-import { Node } from "../types/Node";
+import { Block, Node } from "../types/Node";
 import { RootState } from "../store/configureStore";
 import fetch from "cross-fetch";
 
@@ -19,10 +19,31 @@ export const checkNodeStatus = createAsyncThunk(
 
 export const checkNodesStatus = createAsyncThunk(
   "nodes/checkNodesStatus",
+  async (_, thunkAPI) => {
+    const { dispatch, getState } = thunkAPI;
+    const nodes = (getState() as RootState).nodes.list;
+    nodes.forEach((node) => {
+      dispatch(checkNodeStatus(node));
+    });
+  }
+);
+
+export const retrieveNodeBlocks = createAsyncThunk(
+  "nodes/retrieveNodeBlocks",
+  async (node: Node) => {
+    const data: { data: Block[] } = await (
+      await fetch(`${node.url}/api/v1/blocks`)
+    ).json();
+    return data;
+  }
+);
+
+export const retrieveNodesBlocks = createAsyncThunk(
+  "nodes/retrieveNodesBlocks",
   async (nodes: Node[], thunkAPI) => {
     const { dispatch } = thunkAPI;
     nodes.forEach((node) => {
-      dispatch(checkNodeStatus(node));
+      dispatch(retrieveNodeBlocks(node));
     });
   }
 );
@@ -49,6 +70,26 @@ export const nodesSlice = createSlice({
       if (node) {
         node.online = false;
         node.loading = false;
+      }
+    });
+    builder.addCase(retrieveNodeBlocks.pending, (state, action) => {
+      const node = state.list.find((n) => n.url === action.meta.arg.url);
+      if (node !== undefined) {
+        node.loading = true;
+      }
+    });
+    builder.addCase(retrieveNodeBlocks.fulfilled, (state, action) => {
+      const node = state.list.find((n) => n.url === action.meta.arg.url);
+      if (node !== undefined) {
+        node.loading = false;
+        node.blocks = action.payload.data;
+      }
+    });
+    builder.addCase(retrieveNodeBlocks.rejected, (state, action) => {
+      const node = state.list.find((n) => n.url === action.meta.arg.url);
+      if (node !== undefined) {
+        node.loading = false;
+        node.blocks = [];
       }
     });
   },

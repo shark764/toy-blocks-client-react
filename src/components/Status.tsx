@@ -1,6 +1,5 @@
 import React from "react";
 import { Box } from "@mui/material";
-import colors from "../constants/colors";
 import { styled } from "@mui/material/styles";
 
 type Props = {
@@ -10,12 +9,12 @@ type Props = {
 
 const SpanDot = styled("span", {
   shouldForwardProp: (prop: string) => !["online", "loading"].includes(prop),
-})<{ online: boolean; loading: boolean }>(({ online, loading }) => {
+})<{ online: boolean; loading: boolean }>(({ online, loading, theme }) => {
   const color = loading
-    ? colors.warning
+    ? theme.palette.warning.main
     : online
-    ? colors.success
-    : colors.danger;
+    ? theme.palette.success.main
+    : theme.palette.custom.danger;
   return {
     borderRadius: "50%",
     display: "inline-block",
@@ -27,20 +26,20 @@ const SpanDot = styled("span", {
 
 const SpanText = styled("span", {
   shouldForwardProp: (prop) => prop !== "online",
-})<{ online: boolean }>(({ online }) => ({
-  fontSize: 14,
+})<{ online: boolean }>(({ online, theme }) => ({
+  fontSize: 10,
   display: "block",
-  lineHeight: 1.5,
-  fontWeight: 400,
-  letterSpacing: 1,
+  lineHeight: "16px",
+  fontWeight: 500,
+  letterSpacing: "1.5px",
   paddingLeft: 5,
-  color: online ? colors.text : colors.faded,
+  color: online ? theme.palette.text.primary : theme.palette.custom.faded,
 }));
 
 const Status: React.FC<Props> = ({ online, loading }) => {
   return (
     <Box display="flex" alignItems="center">
-      <SpanDot online={online} loading={loading}></SpanDot>
+      <SpanDot online={online} loading={loading} />
       <SpanText online={online}>
         {loading ? "LOADING" : online ? "ONLINE" : "OFFLINE"}
       </SpanText>

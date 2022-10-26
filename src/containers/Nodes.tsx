@@ -2,9 +2,22 @@ import React, { useState, useEffect } from "react";
 import { Node as NodeType } from "../types/Node";
 import Node from "../components/Node";
 import { Typography, Box } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../store/configureStore";
-import { checkNodesStatus, selectNodes } from "../reducers/nodes";
+import {
+  checkNodesStatus,
+  retrieveNodeBlocks,
+  selectNodes,
+} from "../reducers/nodes";
+
+const TypographyHeading = styled(Typography)(({ theme }) => ({
+  fontWeight: 700,
+  fontSize: "34px",
+  lineHeight: "40px",
+  letterSpacing: "0.25px",
+  color: "#000000",
+}));
 
 export const Nodes: React.FC = () => {
   const [expandedNodeURL, setExpandedNodeURL] = useState<null | string>(null);
@@ -12,19 +25,17 @@ export const Nodes: React.FC = () => {
   const nodes = useAppSelector(selectNodes);
 
   useEffect(() => {
-    dispatch(checkNodesStatus(nodes));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    dispatch(checkNodesStatus());
+  }, [dispatch]);
 
   function toggleNodeExpanded(node: NodeType) {
     setExpandedNodeURL(node.url === expandedNodeURL ? null : node.url);
+    dispatch(retrieveNodeBlocks(node));
   }
 
   return (
     <Box paddingTop={7}>
-      <Typography variant="h4" component="h1">
-        <strong style={{ color: "#000" }}>Nodes</strong>
-      </Typography>
+      <TypographyHeading variant="h4">Nodes</TypographyHeading>
       {nodes.map((node) => (
         <Node
           node={node}
